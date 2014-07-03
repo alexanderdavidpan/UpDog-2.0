@@ -15,7 +15,7 @@ app.get("/", function(req, res){
 var io = require('socket.io').listen(app.listen(port));
 
 io.sockets.on('connection', function (socket) {
-    socket.emit('message', { message: 'Welcome to the Updog' });
+    socket.emit('message', { message: 'Welcome to Updog' });
     socket.on('send', function (data) {
         io.sockets.emit('message', data);
     });
