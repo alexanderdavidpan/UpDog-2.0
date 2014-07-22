@@ -2,7 +2,7 @@ var io = require('socket.io').listen(app);
 
 var jade = require('jade');
 
-var express = require('express'), app = express.createServer();
+var express = require('express'), app = express();
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
