@@ -15,3 +15,7 @@ app.get('/', function(req, res){
   res.render('home.jade');
 });
 app.listen(3000);
+
+io.sockets.on('connection', function (socket) {
+    //our other events...
+});
