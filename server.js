@@ -17,5 +17,7 @@ app.get('/', function(req, res){
 app.listen(3000);
 
 io.sockets.on('connection', function (socket) {
-    //our other events...
+    socket.on('setPseudo', function (data) {
+        socket.set('pseudo', data);
+    });
 });
