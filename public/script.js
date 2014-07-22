@@ -12,3 +12,13 @@ function sentMessage() {
         $('#messageInput').val('');
     }
 }
+
+function setPseudo() {
+    if ($("#pseudoInput").val() != "")
+    {
+        socket.emit('setPseudo', $("#pseudoInput").val());
+        $('#chatControls').show();
+        $('#pseudoInput').hide();
+        $('#pseudoSet').hide();
+    }
+}
