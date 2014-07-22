@@ -1,1 +1,1 @@
-script.js
+var socket = io.connect();
