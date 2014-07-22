@@ -26,3 +26,9 @@ function setPseudo() {
 socket.on('message', function(data) {
     addMessage(data['message'], data['pseudo']);
 });
+
+$(function() {
+    $("#chatControls").hide();
+    $("#pseudoSet").click(function() {setPseudo()});
+    $("#submit").click(function() {sentMessage();});
+});
