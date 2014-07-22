@@ -22,3 +22,7 @@ function setPseudo() {
         $('#pseudoSet').hide();
     }
 }
+
+socket.on('message', function(data) {
+    addMessage(data['message'], data['pseudo']);
+});
