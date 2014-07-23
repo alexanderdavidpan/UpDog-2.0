@@ -4,11 +4,21 @@ body {
 
 div.container {
   margin: 0 auto;
-  border: dotted;
-  width: 70%;
+  border: solid;
+  width: 800px;
+  height: 500px;
 }
 
 h1 {
   color: blue;
   text-align: center;
+}
+
+div#chatEntries {
+  height: 395px;
+  width: 800px
+}
+
+div #chatControls {
+  border: solid;
 }
