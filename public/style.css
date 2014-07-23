@@ -1,0 +1,34 @@
+body {
+  font-family: Helvetica;
+}
+
+div.container {
+  margin: 0 auto;
+  border: solid;
+  width: 800px;
+  height: 500px;
+}
+
+h1 {
+  color: blue;
+  text-align: center;
+}
+
+div#chatEntries {
+  height: 395px;
+  width: 800px
+}
+
+div #chatControls {
+  border: solid;
+}
+
+input#messageInput {
+  margin-left: 1px;
+  width: 80%;
+}
+
+button#submit {
+  margin-left: 1px;
+  width: 19%;
+}

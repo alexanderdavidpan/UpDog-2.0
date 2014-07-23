@@ -10,7 +10,7 @@ var express = require('express')
 var port = Number(process.env.PORT||3000); //port is either the heroku port or localhost:3000
 
 server.listen(port, function(){
-    console.log("I am listening!")
+    console.log("Listening on port " + port +"...")
 });
 
 //set the configurations for res.render

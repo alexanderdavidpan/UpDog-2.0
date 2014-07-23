@@ -31,4 +31,10 @@ $(function() {
     $("#chatControls").hide();
     $("#pseudoSet").click(function() {setPseudo()});
     $("#submit").click(function() {sentMessage();});
+    $("#messageInput").keypress(function(e) {
+        if (e.keyCode == '13') {
+            sentMessage();
+        }
+    });
 });
+
