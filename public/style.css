@@ -2,6 +2,12 @@ body {
   font-family: Helvetica;
 }
 
+div.container {
+  margin: 0 auto;
+  border: dotted;
+  width: 70%;
+}
+
 h1 {
   color: blue;
 }
