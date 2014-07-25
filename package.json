@@ -3,6 +3,10 @@
   "version" : "2.0.0",
   "description" : "Online chat program using Node.js, Express, Jade, and Socket.io",
   "author" : "Alexander Pan",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies" : {
     "express" : "~4.6.1",
     "jade" : "~1.4.2",
