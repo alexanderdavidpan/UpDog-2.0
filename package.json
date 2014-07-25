@@ -1,4 +1,9 @@
 {
   "name" : "UpDog",
   "version" : "2.0.0",
+  "dependencies" : {
+    "express" : "~4.6.1",
+    "jade" : "~1.4.2",
+    "socket.io" :  "~1.0.6"
+  },
 }
