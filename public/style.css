@@ -9,6 +9,10 @@ div.container {
   height: 500px;
 }
 
+header {
+  border-bottom: solid;
+}
+
 h1 {
   color: blue;
   text-align: center;
@@ -20,7 +24,8 @@ div#chatEntries {
 }
 
 div #chatControls {
-  border: solid;
+  border-top: solid;
+  margin-top: -2px;
 }
 
 input#messageInput {
