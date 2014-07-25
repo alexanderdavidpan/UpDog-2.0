@@ -2,7 +2,8 @@ var socket = io.connect();
 
 function addMessage(msg, pseudo) {
     $("#chatEntries").append('<div class="message"><p>' + pseudo + ' : ' + msg + '</p></div>');
-}
+    var objDiv = document.getElementById("chatEntries");
+    objDiv.scrollTop = objDiv.scrollHeight;}
 
 function sentMessage() {
     if ($('#messageInput').val() != "") 
@@ -25,6 +26,8 @@ function setPseudo() {
 
 socket.on('message', function(data) {
     addMessage(data['message'], data['pseudo']);
+    var objDiv = document.getElementById("chatEntries");
+    objDiv.scrollTop = objDiv.scrollHeight;
 });
 
 $(function() {
