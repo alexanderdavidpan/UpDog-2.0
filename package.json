@@ -8,4 +8,8 @@
     "jade" : "~1.4.2",
     "socket.io" :  "~1.0.6"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alexanderdavidpan/UpDog-2.0.git"
+  }
 }
