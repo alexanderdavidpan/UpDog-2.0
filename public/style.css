@@ -21,6 +21,7 @@ div#chatEntries {
 
 div #chatControls {
   border: solid;
+  margin-top: -10px;
 }
 
 input#messageInput {
