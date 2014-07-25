@@ -24,7 +24,7 @@ div#chatEntries {
 }
 
 div #chatControls {
-  border: solid;
+  border-top: solid;
   margin-top: -2px;
 }
 
