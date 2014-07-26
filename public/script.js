@@ -14,7 +14,7 @@ function sentMessage() {
     {
         socket.emit('message', $('#messageInput').val());
         addMessage($('#messageInput').val(), "Me", new Date().toISOString(), true);
-        scrollDown('chatEntries');
+        scrollDown('#chatEntries');
         $('#messageInput').val('');
     }
 }
