@@ -28,7 +28,7 @@ socket.on('message', function(data) {
     scrollDown('chatEntries');
 });
 
-$(function() {
+$(document).ready(function() {
     var username = prompt("Please enter your name:");
     if (username != "" && username !== null){
         $("#messageInput").focus();
