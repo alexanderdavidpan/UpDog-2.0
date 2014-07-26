@@ -19,14 +19,11 @@ function sentMessage() {
     }
 }
 
-function setPseudo() {
-    if ($("#pseudoInput").val() != "")
-    {
-        socket.emit('setPseudo', $("#pseudoInput").val());
-        $('#chatControls').show();
-        $('#pseudoInput').hide();
-        $('#pseudoSet').hide();
-    }
+function setPseudo(psuedo) {
+    socket.emit('setPseudo', psuedo);
+    $('#chatControls').show();
+    $('#pseudoInput').hide();
+    $('#pseudoSet').hide();
 }
 
 socket.on('message', function(data) {
@@ -35,13 +32,19 @@ socket.on('message', function(data) {
 });
 
 $(function() {
-    $("#chatControls").hide();
-    $("#pseudoSet").click(function() {setPseudo()});
-    $("#submit").click(function() {sentMessage();});
-    $("#messageInput").keypress(function(e) {
-        if (e.keyCode == '13') {
-            sentMessage();
-        }
-    });
+    var psuedo = prompt("Please enter your name:");
+    if (psuedo != "" && psuedo !== null){
+        $("#messageInput").focus();
+        setPseudo(psuedo);
+        $("#submit").click(function() {sentMessage();});
+        $("#messageInput").keypress(function(e) {
+            if (e.keyCode == '13') {
+                sentMessage();
+            }
+        });
+    }
+    else {
+        location.reload();
+    }
 });
 
