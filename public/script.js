@@ -22,8 +22,6 @@ function sentMessage() {
 function setUsername(username) {
     socket.emit('setUsername', username);
     $('#chatControls').show();
-    $('#pseudoInput').hide();
-    $('#pseudoSet').hide();
 }
 
 socket.on('message', function(data) {
