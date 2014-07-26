@@ -34,6 +34,7 @@ socket.on('message', function(data) {
 $(function() {
     var psuedo = prompt("Please enter your name:");
     if (psuedo != "" && psuedo !== null){
+        $("#messageInput").focus();
         setPseudo(psuedo);
         $("#submit").click(function() {sentMessage();});
         $("#messageInput").keypress(function(e) {
