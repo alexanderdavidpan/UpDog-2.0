@@ -23,12 +23,12 @@ app.get('/', function(req, res){ //when responding to the GET request, render ho
 });
 
 io.sockets.on('connection', function (socket) {
-    socket.on('setPseudo', function (data) { //this corresponds on line 19 in script.js-----> socket.emit('setPseudo', $("#pseudoInput").val()); ----> script.js sends the setPseudo event, and data is $("#pseduoInput").val();
-        socket.set('pseudo', data); //on setPseudo event, the server sets the pseudo as the data received from script for setPseduo ---> pseudonym
+    socket.on('setUsername', function (data) { //this corresponds on line 19 in script.js-----> socket.emit('setUsername', $("#usernameInput").val()); ----> script.js sends the setUsername event, and data is $("#pseduoInput").val();
+        socket.set('username', data); //on setUsername event, the server sets the username as the data received from script for setPseduo ---> pseudonym
     }); 
     socket.on('message', function (message) {
-        socket.get('pseudo', function (error, name) {
-            var data = { 'message' : message, pseudo : name };
+        socket.get('username', function (error, name) {
+            var data = { 'message' : message, username : name };
             socket.broadcast.emit('message', data);
             console.log("user " + name + " send this : " + message);
         })
