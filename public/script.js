@@ -34,12 +34,14 @@ socket.on('message', function(data) {
 $(function() {
     $("#chatControls").hide();
     var psuedo = prompt("Please enter your name:");
-    setPseudo(psuedo);
-    $("#submit").click(function() {sentMessage();});
-    $("#messageInput").keypress(function(e) {
-        if (e.keyCode == '13') {
-            sentMessage();
-        }
-    });
+    if (psuedo != ""){
+        setPseudo(psuedo);
+        $("#submit").click(function() {sentMessage();});
+        $("#messageInput").keypress(function(e) {
+            if (e.keyCode == '13') {
+                sentMessage();
+            }
+        });
+    }
 });
 
