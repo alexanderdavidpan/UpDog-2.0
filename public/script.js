@@ -4,8 +4,8 @@ function addMessage(msg, username) {
     $("#chatEntries").append('<div class="message"><p>' + username + ' : ' + msg + '</p></div>');
 }
 
-function scrollDown(element) {
-    var objDiv = document.getElementById(element);
+function scrollDown(elementId) {
+    var objDiv = document.getElementById(elementId);
     objDiv.scrollTop = objDiv.scrollHeight;
 }
 
@@ -21,15 +21,14 @@ function sentMessage() {
 
 function setUsername(username) {
     socket.emit('setUsername', username);
-    $('#chatControls').show();
 }
 
 socket.on('message', function(data) {
     addMessage(data['message'], data['username']);
-    scrollDown('chatEntries');
+    scrollDown('#chatEntries');
 });
 
-$(function() {
+$(document).ready(function() {
     var username = prompt("Please enter your name:");
     if (username != "" && username !== null){
         $("#messageInput").focus();
