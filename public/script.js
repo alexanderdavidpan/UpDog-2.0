@@ -1,7 +1,7 @@
 var socket = io.connect();
 
-function addMessage(msg, pseudo) {
-    $("#chatEntries").append('<div class="message"><p>' + pseudo + ' : ' + msg + '</p></div>');
+function addMessage(msg, username) {
+    $("#chatEntries").append('<div class="message"><p>' + username + ' : ' + msg + '</p></div>');
 }
 
 function scrollDown(element) {
