@@ -27,7 +27,7 @@ function setUsername(username) {
 }
 
 socket.on('message', function(data) {
-    addMessage(data['message'], data['pseudo']);
+    addMessage(data['message'], data['username']);
     scrollDown('chatEntries');
 });
 
