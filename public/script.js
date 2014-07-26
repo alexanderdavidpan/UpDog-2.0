@@ -4,8 +4,8 @@ function addMessage(msg, username) {
     $("#chatEntries").append('<div class="message"><p>' + username + ' : ' + msg + '</p></div>');
 }
 
-function scrollDown(element) {
-    var objDiv = document.getElementById(element);
+function scrollDown(elementId) {
+    var objDiv = document.getElementById(elementId);
     objDiv.scrollTop = objDiv.scrollHeight;
 }
 
@@ -25,7 +25,7 @@ function setUsername(username) {
 
 socket.on('message', function(data) {
     addMessage(data['message'], data['username']);
-    scrollDown('chatEntries');
+    scrollDown('#chatEntries');
 });
 
 $(document).ready(function() {
