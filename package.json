@@ -13,8 +13,12 @@
     "socket.io" :  "~1.0.6",
     "forever" : "~0.11.1"
   },
-  "repository": {
+  "repository" : {
     "type": "git",
     "url": "git://github.com/alexanderdavidpan/UpDog-2.0.git"
+  },
+  "engines" : {
+    "node" : "0.10.26",
+    "npm" : "1.4.3"
   }
 }
