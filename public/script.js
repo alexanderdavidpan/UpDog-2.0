@@ -1,7 +1,7 @@
 var socket = io.connect();
 
-function addMessage(msg, pseudo) {
-    $("#chatEntries").append('<div class="message"><p>' + pseudo + ' : ' + msg + '</p></div>');
+function addMessage(msg, username) {
+    $("#chatEntries").append('<div class="message"><p>' + username + ' : ' + msg + '</p></div>');
 }
 
 function scrollDown(element) {
@@ -19,23 +19,21 @@ function sentMessage() {
     }
 }
 
-function setPseudo(psuedo) {
-    socket.emit('setPseudo', psuedo);
+function setUsername(username) {
+    socket.emit('setUsername', username);
     $('#chatControls').show();
-    $('#pseudoInput').hide();
-    $('#pseudoSet').hide();
 }
 
 socket.on('message', function(data) {
-    addMessage(data['message'], data['pseudo']);
+    addMessage(data['message'], data['username']);
     scrollDown('chatEntries');
 });
 
 $(function() {
-    var psuedo = prompt("Please enter your name:");
-    if (psuedo != "" && psuedo !== null){
+    var username = prompt("Please enter your name:");
+    if (username != "" && username !== null){
         $("#messageInput").focus();
-        setPseudo(psuedo);
+        setUsername(username);
         $("#submit").click(function() {sentMessage();});
         $("#messageInput").keypress(function(e) {
             if (e.keyCode == '13') {
