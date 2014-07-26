@@ -43,5 +43,8 @@ $(function() {
             }
         });
     }
+    else {
+        location.reload();
+    }
 });
 
