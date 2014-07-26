@@ -32,7 +32,6 @@ socket.on('message', function(data) {
 });
 
 $(function() {
-    $("#chatControls").hide();
     var psuedo = prompt("Please enter your name:");
     if (psuedo != "" && psuedo !== null){
         setPseudo(psuedo);
