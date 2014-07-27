@@ -22,8 +22,8 @@ app.get('/', function(req, res){ //when responding to the GET request, render ho
 });
 
 io.sockets.on('connection', function (socket) {
-    socket.on('setUsername', function (data) { //this corresponds on line 19 in script.js-----> socket.emit('setUsername', $("#usernameInput").val()); ----> script.js sends the setUsername event, and data is $("#pseduoInput").val();
-        socket.set('username', data); //on setUsername event, the server sets the username as the data received from script for setPseduo ---> pseudonym
+    socket.on('setUsername', function (data) {
+        socket.set('username', data);
     }); 
     socket.on('message', function (message) {
         socket.get('username', function (error, name) {
