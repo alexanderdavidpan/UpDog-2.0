@@ -21,6 +21,7 @@ header h1 {
 div#chatEntries {
   height: 395px;
   width: 800px;
+  overflow-y: auto;
 }
 
 div#chatControls {
