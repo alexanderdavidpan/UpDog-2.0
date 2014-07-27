@@ -17,7 +17,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.set("view options", { layout: false });
 app.use(express.static(__dirname + '/public')); // Express mounts/uses a static server on the /public folder (currentdir/public). Any content of public folder becomes avaialble to be served by the static middleware (ie adds headers, request url info etc)
-app.get('/', function(req, res){ //when responding to the GET request, render home.jade. Render looks inside the views directory and uses the view engine to render the file.
+app.get('/', function(req, res){
   res.render('home.jade');
 });
 
