@@ -20,10 +20,10 @@ h1 {
 
 div#chatEntries {
   height: 395px;
-  width: 800px
+  width: 800px;
 }
 
-div #chatControls {
+div#chatControls {
   border-top: solid;
   margin-top: -2px;
 }
