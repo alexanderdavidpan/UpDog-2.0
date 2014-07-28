@@ -22,8 +22,8 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', function (socket) {
-    socket.on('setUsername', function (data) {
-        socket.set('username', data);
+    socket.on('setUsername', function (username) {
+        socket.username = username
     }); 
     socket.on('message', function (message) {
         socket.get('username', function (error, name) {
