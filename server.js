@@ -6,7 +6,7 @@ var express = require('express')
     ,io = require('socket.io')(server)
     ,jade = require('jade');
 
-var port = Number(process.env.PORT||3000); //port is either the heroku port or localhost:3000
+var port = process.env.PORT || 3000;
 
 server.listen(port, function(){
     console.log("Listening on port " + port + "...")
