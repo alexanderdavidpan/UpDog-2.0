@@ -21,7 +21,7 @@ app.get('/', function(req, res){
   res.render('home.jade');
 });
 
-io.sockets.on('connection', function (socket) {
+io.on('connection', function (socket) {
     socket.on('setUsername', function (data) {
         socket.set('username', data);
     }); 
