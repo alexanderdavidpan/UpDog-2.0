@@ -25,11 +25,10 @@ io.on('connection', function (socket) {
     socket.on('setUsername', function (username) {
         socket.username = username
     }); 
-    socket.on('message', function (message) {
-        socket.get('username', function (error, name) {
-            var data = { 'message' : message, username : name };
-            socket.broadcast.emit('message', data);
-            console.log("user " + name + " send this : " + message);
-        })
-    });
+    socket.on('message', function (data) {
+        socket.broadcast.emit('new message', {
+            username: socket.username,
+            message: data
+        });           
+    })
 });
