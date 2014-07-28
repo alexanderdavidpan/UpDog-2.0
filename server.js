@@ -3,7 +3,7 @@ var express = require('express')
     ,app = express()
     ,http = require('http')
     ,server = http.createServer(app)
-    ,io = require('socket.io').listen(server)
+    ,io = require('socket.io')(server)
     ,jade = require('jade');
 
 var port = Number(process.env.PORT||3000); //port is either the heroku port or localhost:3000
