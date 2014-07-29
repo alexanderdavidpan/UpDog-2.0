@@ -1,4 +1,4 @@
-var socket = io.connect();
+var socket = io.connect('http://localhost:3000');
 
 function addMessage(msg, username) {
     $("#chatEntries").append('<div class="message"><p>' + username + ' : ' + msg + '</p></div>');

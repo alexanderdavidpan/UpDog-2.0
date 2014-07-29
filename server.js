@@ -3,10 +3,10 @@ var express = require('express')
     ,app = express()
     ,http = require('http')
     ,server = http.createServer(app)
-    ,io = require('socket.io').listen(server)
+    ,io = require('socket.io')(server)
     ,jade = require('jade');
 
-var port = Number(process.env.PORT||3000); //port is either the heroku port or localhost:3000
+var port = process.env.PORT || 3000;
 
 server.listen(port, function(){
     console.log("Listening on port " + port + "...")
@@ -21,15 +21,14 @@ app.get('/', function(req, res){
   res.render('home.jade');
 });
 
-io.sockets.on('connection', function (socket) {
-    socket.on('setUsername', function (data) {
-        socket.set('username', data);
+io.on('connection', function (socket) {
+    socket.on('setUsername', function (username) {
+        socket.username = username
     }); 
-    socket.on('message', function (message) {
-        socket.get('username', function (error, name) {
-            var data = { 'message' : message, username : name };
-            socket.broadcast.emit('message', data);
-            console.log("user " + name + " send this : " + message);
-        })
-    });
+    socket.on('message', function (data) {
+        socket.broadcast.emit('new message', {
+            username: socket.username,
+            message: data
+        });           
+    })
 });
